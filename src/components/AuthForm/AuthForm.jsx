@@ -13,18 +13,52 @@ import {
 import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 export const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const toast = useToast();
+
+  const handleAuth = () => {
+    if (inputs.email === "" || inputs.password === "") {
+      toast({
+        title: "Please Fill the Fields ! ",
+        description: "Fullfill requirements to continue.",
+        status: "error",
+        position: "top",
+        duration: 2000,
+        isClosable: true,
+      });
+      return;
+    }
+    navigate("/");
+  };
   return (
     <>
       <Box border={"1px solid #F1EFEF"} borderRadius={4} padding={8}>
         <VStack spacing={4}>
           <Image src="/logo.png" />
-          <Input type="email" fontSize={12} placeholder="example@example.com" />
+          <Input
+            value={inputs.email}
+            onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+            type="email"
+            fontSize={12}
+            placeholder="example@example.com"
+          />
           <InputGroup>
             <Input
+              value={inputs.password}
+              onChange={(e) =>
+                setInputs({ ...inputs, password: e.target.value })
+              }
               type={isShowPassword ? "text" : "password"}
               fontSize={12}
               placeholder="password"
@@ -39,6 +73,10 @@ export const AuthForm = () => {
             {!isLogin && (
               <>
                 <Input
+                  value={inputs.confirmPassword}
+                  onChange={(e) =>
+                    setInputs({ ...inputs, confirmPassword: e.target.value })
+                  }
                   type={isShowPassword ? "text" : "password"}
                   fontSize={12}
                   placeholder="confirm password"
@@ -51,7 +89,13 @@ export const AuthForm = () => {
               </>
             )}
           </InputGroup>
-          <Button size={"sm"} w={"full"} fontSize={12} colorScheme="blue">
+          <Button
+            onClick={handleAuth}
+            size={"sm"}
+            w={"full"}
+            fontSize={12}
+            colorScheme="blue"
+          >
             {isLogin ? "Login" : "Sign Up"}
           </Button>
           <Flex
