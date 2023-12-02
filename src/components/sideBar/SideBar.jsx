@@ -1,8 +1,16 @@
-import { Box, Flex, HStack, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link as RouteLink } from "react-router-dom";
-import InstagramSvg from "../../../src/assets/instagram-svgrepo-com.svg";
-import { GoHomeFill } from "react-icons/go";
+import { SearchCustomSvg } from "../Svgs/SearchCustomSvg";
+import { HomeCustomeSvg } from "../Svgs/HomeCustomeSvg";
+import { ExploreCustomSvg } from "../Svgs/ExploreCustomSvg";
+import { ReelsCustomSvg } from "../Svgs/ReelsCustomSvg";
+import { MessageCustomSvg } from "../Svgs/MessageCustomSvg";
+import { NotificationCustomSvg } from "../Svgs/NotificationCustomSvg";
+import { InstagramCustomSvg } from "../Svgs/InstagramCustomSvg";
+import { CreateCustomSvg } from "../Svgs/CreateCustomSvg";
+import { Avatar } from "@chakra-ui/react";
+import { HomePhoneCustomSvg } from "../Svgs/HomePhoneCustomSvg";
 
 export const SideBar = () => {
   return (
@@ -13,47 +21,132 @@ export const SideBar = () => {
       left={0}
       borderRight={"1px solid #F1EFEF"}
     >
-      <Flex direction={"column"} gap={4} w={"full"} h={"full"}>
-        <Link
-          to={"/"}
-          as={RouteLink}
-          p={{ base: "4px", md: "10px" }}
-          display={{ base: "none", md: "block" }}
-        >
-          <Image src="/logo.png" alt="logo" />
-        </Link>
+      <Flex direction={"column"} gap={6} w={"full"} h={"full"} padding={4}>
+        <Box display={{ base: "none", md: "block" }}>
+          <RouteLink to={"/"}>
+            <Image src="/logo.png" alt="logo" />
+          </RouteLink>
+        </Box>
 
-        <Link
-          to={"/"}
-          as={RouteLink}
-          p={5}
-          display={{ base: "block", md: "none" }}
-        >
-          <Image src={InstagramSvg} alt="InstgramLogo" />
-        </Link>
+        <Box display={{ base: "block", md: "none" }}>
+          <RouteLink to={"/"}>
+            <InstagramCustomSvg />
+          </RouteLink>
+        </Box>
 
-        <Link
-          to={"/"}
-          as={RouteLink}
-          px={5}
-          display={{ base: "none", md: "block" }}
-        >
-          <HStack gap={4}>
-            <GoHomeFill fontSize={"26px"} />{" "}
-            <Text fontWeight={"bold"} fontSize={"large"}>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <Box display={{ base: "block", md: "none" }}>
+              <HomePhoneCustomSvg />
+            </Box>
+            <Box display={{ base: "none", md: "block" }}>
+              <HomeCustomeSvg />
+            </Box>
+            <Box
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
               Home
+            </Box>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <SearchCustomSvg />
+            <Box
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Search
+            </Box>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <ExploreCustomSvg />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Explore
             </Text>
-          </HStack>
-        </Link>
-
-        <Link
-          to={"/"}
-          as={RouteLink}
-          px={5}
-          display={{ base: "block", md: "none" }}
-        >
-          <GoHomeFill fontSize={"32px"} />
-        </Link>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <ReelsCustomSvg />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Reels
+            </Text>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <MessageCustomSvg />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Messages
+            </Text>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <NotificationCustomSvg />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Notifications
+            </Text>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={4}>
+            <CreateCustomSvg />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Create
+            </Text>
+          </Flex>
+        </RouteLink>
+        <RouteLink to={"/"} px={5}>
+          <Flex direction={"row"} gap={6}>
+            <Avatar
+              size={"sm"}
+              name="Segun Adebayo"
+              src="https://bit.ly/sage-adebayo"
+            />
+            <Text
+              display={{ base: "none", md: "block" }}
+              fontWeight={"bold"}
+              fontSize={"medium"}
+              pt={1.5}
+            >
+              Profile
+            </Text>
+          </Flex>
+        </RouteLink>
       </Flex>
     </Box>
   );

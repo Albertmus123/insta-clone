@@ -64,6 +64,7 @@ export const AuthForm = () => {
               placeholder="password"
             />
             <InputRightElement
+              cursor={"pointer"}
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? <FaEye /> : <FaEyeSlash />}
@@ -82,6 +83,7 @@ export const AuthForm = () => {
                   placeholder="confirm password"
                 />
                 <InputRightElement
+                  cursor={"pointer"}
                   onClick={() => setIsShowPassword(!isShowPassword)}
                 >
                   {isShowPassword ? <FaEye /> : <FaEyeSlash />}
