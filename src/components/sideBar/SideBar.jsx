@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link as RouteLink } from "react-router-dom";
 import { SearchCustomSvg } from "../Svgs/SearchCustomSvg";
@@ -33,8 +33,7 @@ export const SideBar = () => {
             <InstagramCustomSvg />
           </RouteLink>
         </Box>
-
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <Box display={{ base: "block", md: "none" }}>
               <HomePhoneCustomSvg />
@@ -52,7 +51,7 @@ export const SideBar = () => {
             </Box>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <SearchCustomSvg />
             <Box
@@ -65,7 +64,7 @@ export const SideBar = () => {
             </Box>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <ExploreCustomSvg />
             <Text
@@ -78,7 +77,7 @@ export const SideBar = () => {
             </Text>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <ReelsCustomSvg />
             <Text
@@ -91,7 +90,7 @@ export const SideBar = () => {
             </Text>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <MessageCustomSvg />
             <Text
@@ -104,7 +103,7 @@ export const SideBar = () => {
             </Text>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <NotificationCustomSvg />
             <Text
@@ -117,7 +116,7 @@ export const SideBar = () => {
             </Text>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={4}>
             <CreateCustomSvg />
             <Text
@@ -130,7 +129,7 @@ export const SideBar = () => {
             </Text>
           </Flex>
         </RouteLink>
-        <RouteLink to={"/"} px={5}>
+        <RouteLink to={"/"}>
           <Flex direction={"row"} gap={6}>
             <Avatar
               size={"sm"}
