@@ -70,7 +70,7 @@ export const PostCard = () => {
               />
               <Text fontWeight={"bold"}>56,000 Likes</Text>
             </Flex>
-            <Text>more</Text>
+            <Text>more ...</Text>
             <Box>
               <Text fontWeight={"bold"} fontSize={"14px"}>
                 View all 34 Comments
